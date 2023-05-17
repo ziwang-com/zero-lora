@@ -24,6 +24,7 @@ zero-loro零训练llm调参算法，属于zw团队在llm一线工程中，总结
 * 优化chatgpt训练模型矢量权重数据。
 * 微调的低成本替代方案。
 * 便于可视化分析，参见后文
+* ......
 
 目前，关于zero-lora调参，网络上面其实也已经有不少第三方的独立探讨，只不过角度不同，名称不同，这其中的观点有：
 
@@ -37,11 +38,12 @@ https://www.lesswrong.com/posts/5spBue2z2tw4JuDCx/steering-gpt-2-xl-by-adding-an
 * 《10 个 loras 在一个 ggml 文件中》
     * https://github.com/ggerganov/llama.cpp/discussions/1481
 
-###【可视化分析】
+## 【可视化分析】
 
 参见：
 https://github.com/ggerganov/llama.cpp/pull/1472
 代码#1，生成token数据
+
 ./bin/main --model ../models/llama-7b-q4_0.bin -n 32 \
    --seed 123 \
   --prompt "I want to kill you because you're such a" \
@@ -50,13 +52,14 @@ https://github.com/ggerganov/llama.cpp/pull/1472
   --steering-source 1 \
   --steering-layer 20 \
   --steering-mul 2
+
 代码#2，可视化分析
 
 import numpy as np
 from matplotlib import pyplot as plt
-​
+
 steer = np.fromfile("~/src/llama.cpp/build/steering.bin", dtype=np.float32).reshape((512, -1))
-​
+
 fig, ax = plt.subplots(3)
 for i in range(0, len(ax)):
     ax[i].imshow(steer[3+i, :].reshape((32, -1)))
@@ -75,7 +78,7 @@ for i in range(0, len(ax)):
 
 理论上，这方面有无限延展的空间，甚至可以衍生出一个完整的可视化lora优化架构和理论体系。
 
-##TODO：
+## TODO：
 
 本文，可能首次正式提出zero-lora调参这个概念，这只是个开始。
 
@@ -83,21 +86,14 @@ for i in range(0, len(ax)):
 
 其中，根据AI一线工程经验，比较急切的有：
 
-各种不同模型架构的lora的归一化。sd绘图模型lora叠加之所以成为主流优化架构之一，其中最主要的原因就是，base-mode只有stable difusion一种，各种第三方优化模型权重，shape，size等参数统一，见过简单处理，即可以直接叠加。
-
-zero-lora架构，各个相关环节的梳理，优化。
-
-可量化的评测指标，便于不同lora体系的整合。
-
-简单完善zero-lora可视化模块。
-
-zero-lora相关理论体系研究。
-
-基于时间（不同训练周期检查点）、空间（不同token权重对比）、z深度（tok在不同模型的权重映射）等多种维度的lora权重优化体系。
-
-多模态lora权重优化体系。
-
-。。。。。。
+* 各种不同模型架构的lora的归一化。sd绘图模型lora叠加之所以成为主流优化架构之一，其中最主要的原因就是，base-mode只有stable difusion一种，各种第三方优化模型权重，shape，size等参数统一，见过简单处理，即可以直接叠加。
+* zero-lora架构，各个相关环节的梳理，优化。
+* 可量化的评测指标，便于不同lora体系的整合。
+* 简单完善zero-lora可视化模块。
+* zero-lora相关理论体系研究。
+* 基于时间（不同训练周期检查点）、空间（不同token权重对比）、z深度（tok在不同模型的权重映射）等多种维度的lora权重优化体系。
+* 多模态lora权重优化体系。
+* 。。。。。。
 
 
 
