@@ -73,7 +73,8 @@ for i in range(0, len(ax)):
 
 下图，是论文《转向矢量与GPT优化》当中，关于“婚礼”一词不同layer的权重对比分析。
 
-![Uploading xlora05.png…]()
+
+<img width="632" alt="xlora05" src="https://github.com/ziwang-com/zero-lora/assets/11691791/8ff8054a-7cde-418d-b4f3-55381ad3fd78">
 
 
 理论上，这方面有无限延展的空间，甚至可以衍生出一个完整的可视化lora优化架构和理论体系。
