@@ -1,4 +1,4 @@
-# zero-lora零训练llm调参
+# zero-lora零训练llm调参算法
 zero零训练llm调参
 工程案例参见：全球首个StableVicuna中文优化版。
 
