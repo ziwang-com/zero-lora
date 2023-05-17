@@ -18,3 +18,120 @@ https://github.com/ziwang-com/chinese-StableVicuna
 # TODO：
 
 ### TODO：
+
+全球首发：zero-lora零训练LLM优化算法idea
+28/64
+zw；Y·star
+5/8
+zero-lora
+zero-lora零训练LLM优化算法idea:
+属于zw团队在工程中总结的实战算法，相关理论，正在摸索当中，欢迎llm领域的专家学者，共同探讨。
+
+zero零训练llm调参工程案例参见：全球首个StableVicuna中文优化版。
+https://github.com/ziwang-com/chinese-StableVicuna
+
+
+
+
+整个项目，仅用半天时间，其中大部分时间花在格式转换方面，与zero-lora相关的环节，不到20%。
+
+所谓zero-lora调参，就是无需如何调参，直接采用，已经调整过的各种lora，与相关的llm模型，进行叠加，合成即可。
+
+优点：
+
+算力成本只需传统lora调参的万分之一。
+无需GPU计算，cpu平台即可，唯一要求就ram尽量大一点，推荐：i9，64G。
+已经有成功的工程案例：zw-sd-vicuna 。
+虽然zw-sd-vicuna可能是llm第一个zero-lora案例，不过在AIGC 绘图模型领域，已经有大量的第三方stable difusion绘图模型，是基于lora叠加模式。
+便于可视化分析，参见后文
+
+已经有多个第三方探讨者其中的观点有：
+可以使用线性数学，快速处理lora数据。
+优化chatgpt训练模型矢量权重数据。
+
+微调的低成本替代方案
+
+
+
+论文《转向矢量与GPT优化》，已经上传到本项目网站。
+
+https://www.lesswrong.com/posts/5spBue2z2tw4JuDCx/steering-gpt-2-xl-by-adding-an-activation-vector
+
+
+
+社区链接：
+
+《[研究] 转向矢量》
+
+    ​https://github.com/ggerganov/llama.cpp/issues/1460 
+    ​https://github.com/ggerganov/llama.cpp/pull/1472
+
+《10 个 loras 在一个 ggml 文件中》
+
+    ​https://github.com/ggerganov/llama.cpp/discussions/1481
+
+【可视化分析】
+
+参见：
+https://github.com/ggerganov/llama.cpp/pull/1472
+代码#1，生成token数据
+./bin/main --model ../models/llama-7b-q4_0.bin -n 32 \
+   --seed 123 \
+  --prompt "I want to kill you because you're such a" \
+  --steering-add "I love you so much" \
+  --steering-sub "I hate you so much" \
+  --steering-source 1 \
+  --steering-layer 20 \
+  --steering-mul 2
+代码#2，可视化分析
+
+import numpy as np
+from matplotlib import pyplot as plt
+​
+steer = np.fromfile("~/src/llama.cpp/build/steering.bin", dtype=np.float32).reshape((512, -1))
+​
+fig, ax = plt.subplots(3)
+for i in range(0, len(ax)):
+    ax[i].imshow(steer[3+i, :].reshape((32, -1)))
+
+
+
+
+传统llm模型的lora调参训练，通常只有loss曲线，无法对具体的token，进行深度的关联分析 ，情感分析。
+
+以上图片，只是最简单的love和hate，两个不同情感单词，token语句的可视化分析。
+
+下图，是论文《转向矢量与GPT优化》当中，关于“婚礼”一词不同layer的权重对比分析。
+
+
+
+理论上，这方面有无限延展的空间，甚至可以衍生出一个完整的可视化lora优化架构和理论体系。
+
+TODO：
+
+本文，可能首次正式提出zero-lora调参这个概念，这只是个开始。
+
+关于zero-lora调参架构，还有相关的理论体系，还有大量的工作需要大家补充完善。
+
+其中，根据AI一线工程经验，比较急切的有：
+
+各种不同模型架构的lora的归一化​。sd绘图模型lora叠加之所以成为主流优化架构之一，其中最主要的原因就是，base-mode只有stable difusion一种，各种第三方优化模型权重，shape，size等参数统一，见过简单处理，即可以直接​叠加。
+
+zero-lora架构，各个相关环节的梳理，优化。
+
+可量化的评测指标，便于不同lora体系的整合。
+
+简单完善zero-lora可视化​模块。
+
+zero-lora相关理论体系研究。
+
+基于时间（不同训练周期检查点）、空间（不同token权重对比）、z深度（tok在不同模型的权重映射）等多种维度的lora权重优化体系。
+
+多模态lora权重优化体系。
+
+。。。。。。
+
+
+
+
+
