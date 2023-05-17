@@ -4,7 +4,7 @@ zero零训练llm调参
 
 https://github.com/ziwang-com/chinese-StableVicuna
 整个项目，仅用半天时间，其中大部分时间花在格式转换方面，与zero-lora相关的环节，不到20%。
-<img width="791" alt="zwvic-507" src="https://user-images.githubusercontent.com/11691791/236652692-326fe40d-72ac-4478-8db3-97fd7c0d153b.png">
+![st-vic-qcod](https://user-images.githubusercontent.com/11691791/235562989-601c9ead-7732-4c56-b380-324f0866536e.png)
 
 所谓zero-lora调参，就是无需如何调参，直接采用，已经调整过的各种lora，与相关的llm模型，进行叠加，合成即可。
 ## 优点：
