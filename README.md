@@ -27,16 +27,15 @@ zero-loro零训练llm调参算法，属于zw团队在llm一线工程中，总结
 
 目前，关于zero-lora调参，网络上面其实也已经有不少第三方的独立探讨，只不过角度不同，名称不同，这其中的观点有：
 
-论文《转向矢量与GPT优化》，已经上传到本项目网站。
+* 论文《转向矢量与GPT优化》，已经上传到本项目网站。
 https://www.lesswrong.com/posts/5spBue2z2tw4JuDCx/steering-gpt-2-xl-by-adding-an-activation-vector
 
-### 社区链接：
-《[研究] 转向矢量》
-    ​https://github.com/ggerganov/llama.cpp/issues/1460 
-    ​https://github.com/ggerganov/llama.cpp/pull/1472
+* 《[研究] 转向矢量》
+    * https://github.com/ggerganov/llama.cpp/issues/1460 
+    * https://github.com/ggerganov/llama.cpp/pull/1472
 
-《10 个 loras 在一个 ggml 文件中》
-    ​https://github.com/ggerganov/llama.cpp/discussions/1481
+* 《10 个 loras 在一个 ggml 文件中》
+    * https://github.com/ggerganov/llama.cpp/discussions/1481
 
 ###【可视化分析】
 
