@@ -27,7 +27,7 @@ zero-loro零训练llm调参算法，属于zw团队在llm一线工程中，总结
 
 ### 优点：
 * 算力成本只有传统lora调参的万分之一。
-* 无需GPU计算，cpu即可，唯一要求就ram尽量大一点，推荐：i9，64G
+* 无需GPU计算，cpu即可，ram尽量大一点，推荐：i9，64G以上
 * 已经有成功的工程案例：zw-sd-vicuna
 * 可以使用线性数学，快速处理lora数据。
 * 优化chatgpt训练模型矢量权重数据。
@@ -35,9 +35,9 @@ zero-loro零训练llm调参算法，属于zw团队在llm一线工程中，总结
 * 便于可视化分析，参见后文
 * ......
 
-目前，关于zero-lora调参，网络上面其实也已经有不少第三方的独立探讨，只不过角度不同，名称不同，这其中的观点有：
-
-* 论文《转向矢量与GPT优化》，已经上传到本项目网站。
+关于zero-lora调参，目前也已经有不少第三方在研究，只不过角度不同，名称不同，其中的观点有：
+* （相关资料稳定，已经上传到本项目网站）
+* 论文《转向矢量与GPT优化》。
 https://www.lesswrong.com/posts/5spBue2z2tw4JuDCx/steering-gpt-2-xl-by-adding-an-activation-vector
 
 * 《[研究] 转向矢量》
@@ -51,6 +51,7 @@ https://www.lesswrong.com/posts/5spBue2z2tw4JuDCx/steering-gpt-2-xl-by-adding-an
 
 参见：
 https://github.com/ggerganov/llama.cpp/pull/1472
+
 代码#1，生成token数据
 
 ./bin/main --model ../models/llama-7b-q4_0.bin -n 32 \
@@ -61,6 +62,7 @@ https://github.com/ggerganov/llama.cpp/pull/1472
   --steering-source 1 \
   --steering-layer 20 \
   --steering-mul 2
+
 
 代码#2，可视化分析
 
@@ -76,32 +78,31 @@ for i in range(0, len(ax)):
 ![xlora03](https://github.com/ziwang-com/zero-lora/assets/11691791/be38138a-d4aa-48b0-a8a0-525c16623665)
 
 
-传统llm模型的lora调参训练，通常只有loss曲线，无法对具体的token，进行深度的关联分析 ，情感分析。
+传统llm模型的lora调参训练，通常只有loss曲线，无法对具体token，进行深度的关联分析 ，情感分析。
 
 以上图片，只是最简单的love和hate，两个不同情感单词，token语句的可视化分析。
 
 下图，是论文《转向矢量与GPT优化》当中，关于“婚礼”一词不同layer的权重对比分析。
 
-
 <img width="632" alt="xlora05" src="https://github.com/ziwang-com/zero-lora/assets/11691791/8ff8054a-7cde-418d-b4f3-55381ad3fd78">
 
-
-理论上，这方面有无限延展的空间，甚至可以衍生出一个完整的可视化lora优化架构和理论体系。
+理论上，这方面有无限延展的空间，甚至可以衍生出一个完整的：可视化lora优化架构和理论体系。
 
 ## TODO：
 
-本文，可能首次正式提出zero-lora调参这个概念，这只是个开始。
+本文，可能是llm领域，首次正式提出zero-lora调参，这一概念，这也许，只是个开始。
 
-关于zero-lora调参架构，还有相关的理论体系，还有大量的工作需要大家补充完善。
+关于zero-lora调参架构，还有相关的理论体系，有大量的工作，需要大家补充完善。
+想刷高分paper，以及在GPT时代，寻找市场机会的llm创业团队，尽管放马过来。
 
-其中，根据AI一线工程经验，比较急切的有：
+根据AI一线工程经验，其中，比较急切的问题有：
 
 * 各种不同模型架构的lora的归一化。sd绘图模型lora叠加之所以成为主流优化架构之一，其中最主要的原因就是，base-mode只有stable difusion一种，各种第三方优化模型权重，shape，size等参数统一，见过简单处理，即可以直接叠加。
 * zero-lora架构，各个相关环节的梳理，优化。
 * 可量化的评测指标，便于不同lora体系的整合。
-* 简单完善zero-lora可视化模块。
+* 完善zero-lora可视化模块。
 * zero-lora相关理论体系研究。
-* 基于时间（不同训练周期检查点）、空间（不同token权重对比）、z深度（tok在不同模型的权重映射）等多种维度的lora权重优化体系。
+* 基于时间（不同训练周期检查点）、空间（不同token权重对比）、深度（不同模型的tok权重映射）等多种维度的lora权重优化体系。
 * 多模态lora权重优化体系。
 * 。。。。。。
 
@@ -111,7 +112,6 @@ for i in range(0, len(ax)):
 为方便国内广大个人用户，中小企业，创业团队，尽快体验GPT这一最新科技成果。
 m-f.vip元字库网站，近期，将率先在国内推出低成本的GPT”百元包月“服务，不限流量，任意使用。
 ![st-vic-qcod](https://user-images.githubusercontent.com/11691791/235562989-601c9ead-7732-4c56-b380-324f0866536e.png)
-
 
 
 更多参见：
