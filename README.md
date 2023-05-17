@@ -97,7 +97,7 @@ for i in range(0, len(ax)):
 
 根据AI一线工程经验，其中，比较急切的问题有：
 
-* 各种不同模型架构的lora的归一化。sd绘图模型lora叠加之所以成为主流优化架构之一，其中最主要的原因就是，base-mode只有stable difusion一种，各种第三方优化模型权重，shape，size等参数统一，见过简单处理，即可以直接叠加。
+* 各种不同模型架构的lora的归一化。sd绘图模型lora叠加之所以成为主流优化架构之一，其中最主要的原因就是，base-mode只有stable difusion一种，各种第三方优化模型权重，shape，size等参数统一，只需简单处理，即可以直接叠加。
 * zero-lora架构，各个相关环节的梳理，优化。
 * 可量化的评测指标，便于不同lora体系的整合。
 * 完善zero-lora可视化模块。
