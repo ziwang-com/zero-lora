@@ -16,6 +16,7 @@ zero-loro零训练llm调参算法，属于zw团队在llm一线工程中，总结
 联系方式： 
 微信：zwpython，或扫描二维码。QQ：357811718（zw字王） 
 联系信息注明：sv模型合作。 
+
 ![qcod-zw200x](https://user-images.githubusercontent.com/11691791/236652627-76351e5d-68e8-43a5-98e6-5b837ae0a3f1.png)
 
 所谓zero-lora调参，就是无需任何调参，直接采用，已经调整过的各种lora，与相关的llm模型，进行叠加，合成即可。
