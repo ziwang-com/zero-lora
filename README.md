@@ -1,10 +1,13 @@
 # zero-lora零训练llm调参算法
+
 zero零训练llm调参算法
+
 工程案例参见：全球首个StableVicuna中文优化版。
 
 https://github.com/ziwang-com/chinese-StableVicuna
 
 整个项目，仅用半天时间，其中大部分时间花在格式转换方面，与zero-lora相关的环节，不到20%。
+
 zero零训练llm调参算法，属于zw团队在llm一线工程中，总结的实战算法，相关理论，正在摸索当中，欢迎llm领域的专家学者，共同探讨。
 
 ![st-vic-qcod](https://user-images.githubusercontent.com/11691791/235562989-601c9ead-7732-4c56-b380-324f0866536e.png)
