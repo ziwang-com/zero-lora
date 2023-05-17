@@ -46,6 +46,9 @@ https://www.lesswrong.com/posts/5spBue2z2tw4JuDCx/steering-gpt-2-xl-by-adding-an
 
 * 《10 个 loras 在一个 ggml 文件中》
     * https://github.com/ggerganov/llama.cpp/discussions/1481
+    *
+* 《Lora能在不同的大语言模型间交叉融合使用吗？》
+    * https://github.com/StarRing2022/ChatGPTX-Uni
 
 ## 【可视化分析】
 
