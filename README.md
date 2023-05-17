@@ -8,7 +8,18 @@ https://github.com/ziwang-com/chinese-StableVicuna
 
 zero-loro零训练llm调参算法，属于zw团队在llm一线工程中，总结的实战算法，相关理论，正在摸索当中，欢迎llm领域的专家学者，共同探讨。
 
+
 ![st-vic-qcod](https://user-images.githubusercontent.com/11691791/235562989-601c9ead-7732-4c56-b380-324f0866536e.png)
+
+
+近日很多llm网友咨询zw-Stable-Vicuna，因为模型仍然在测试当中，目前只对合作伙伴提供，特别是学术方面有联合课题的合作伙伴。
+
+联系方式： 
+微信：zwpython，或扫描二维码。QQ：357811718（zw字王） 
+联系信息注明：sv模型合作。 
+合作伙伴，请提供相关文字资料：
+团队核心成员简介，研究课题，合作方向，如有相关PPT资料更好。
+![qcod-zw200x](https://user-images.githubusercontent.com/11691791/236652627-76351e5d-68e8-43a5-98e6-5b837ae0a3f1.png)
 
 所谓zero-lora调参，就是无需任何调参，直接采用，已经调整过的各种lora，与相关的llm模型，进行叠加，合成即可。
 
