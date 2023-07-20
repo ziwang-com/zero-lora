@@ -128,13 +128,6 @@ for i in range(0, len(ax)):
 为方便国内广大个人用户，中小企业，创业团队，尽快体验GPT这一最新科技成果。
 m-f.vip元字库网站，近期，将率先在国内推出低成本的GPT”百元包月“服务，不限流量，任意使用。
 
-![zwgpt-pub_20230517161849](https://github.com/ziwang-com/zero-lora/assets/11691791/c692636d-139a-4da7-b9e9-d5bef98904d4)
-
-
-更多参见：
-http://ziwang.com 
-http://metafont.vip 
-短域名:http://m-f.vip 
 
 
 ![zwagi- (4)](https://github.com/ziwang-com/zero-lora/assets/11691791/628f48a9-d5b4-4a87-9985-0008b1f70f82)
