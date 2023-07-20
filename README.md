@@ -11,13 +11,25 @@ zero-loro零训练llm调参算法，属于zw团队在llm一线工程中，总结
 
 ![st-vic-qcod](https://user-images.githubusercontent.com/11691791/235562989-601c9ead-7732-4c56-b380-324f0866536e.png)
 
-近日很多网友咨询zw-Stable-Vicuna，模型仍在测试，目前只对合作伙伴提供。
-合作伙伴，请提供相关文字资料：团队核心成员简介，研究课题，合作方向，以及相关PPT资料。
-联系方式： 
-微信：zwpython，或扫描二维码。QQ：357811718（zw字王） 
-联系信息注明：sv模型合作。 
 
-![qcod-zw200x](https://user-images.githubusercontent.com/11691791/236652627-76351e5d-68e8-43a5-98e6-5b837ae0a3f1.png)
+# 【智王AI资源库】
+
+智王mini-AGI开源项目以及相关模块库，均在【智王AI资源库】提供免费下载。
+
+百度网盘提取码：hiks
+
+[https://pan.baidu.com/s/1EH19ablXVLYQP1f-IaPS-Q?pwd=hiks](https://pan.baidu.com/s/1EH19ablXVLYQP1f-IaPS-Q?pwd=hiks)
+
+如有更改，最新下载地址请参见: 
+
+QQ群文件：655402626（GPT+千人QQ大群）
+
+更多细节，参见公众号。欢迎加入：QQ群，微信群。
+
+
+![zw-GPT三合一+群二维码v2](https://github.com/ziwang-com/AGI-MAP/assets/11691791/433a84bc-0584-45ae-af53-0e231eeef41c)
+
+## zero-lora零训练llm调参算法
 
 所谓zero-lora调参，就是无需任何调参，直接采用，已经调整过的各种lora，与相关的llm模型，进行叠加，合成即可。
 
